@@ -21,6 +21,7 @@ class ProcessChain
 			if (i == processes.size() - 1) {
 				OnProcessComplete.Invoke(this);
 				delete this;
+				break;
 			}
 		}
 	});

@@ -4,6 +4,7 @@
 #include "DoOnUpdate.h"
 #include "WaitForSeconds.h"
 #include <vector>
+#include <iostream>
 
 class Processor
 {
@@ -18,6 +19,7 @@ public:
 	void EndAllProcesses();
 
 	EventListener<ProcessChain*>* RemoveProcessFromList = new EventListener<ProcessChain*>([this](ProcessChain* process) {
+		std::cout << "OnProcessComplete call received\n";
 		for (size_t i = 0; i < processes.size(); i++)
 		{
 			if (processes.at(i) == process) {
