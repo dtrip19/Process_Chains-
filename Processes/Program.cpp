@@ -22,7 +22,6 @@ public:
         {
             new DoOnUpdate(-1, [this]() { num--; OtherFunction(); }, [this]() { return num > 0; }),
             new DoOnUpdate(5, []() { std::cout << "This is a message\n"; }, NULL),
-            new WaitForSeconds(5),
             new DoOnce([this]() { OnEndProcess.Invoke(); })
         }));
     }
@@ -40,4 +39,6 @@ int main()
         if (*loop == false) { std::cout << "This should not be possible\n"; }
 		OnUpdate.Invoke();
 	}
+
+    delete listener;
 }
