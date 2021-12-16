@@ -27,6 +27,6 @@ ProcessChain::~ProcessChain() {
 	delete Loop;
 	for (int i = processes.size() - 1; i >= 0; i--)
 	{
-		delete processes.at(i);
+		delete processes[i];
 	}
 }

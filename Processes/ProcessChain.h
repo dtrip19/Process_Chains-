@@ -16,7 +16,7 @@ class ProcessChain
 
 		for (size_t i = 0; i < processes.size(); i++)
 		{
-			if (processes[i] != nullptr && !processes[i]->Invoke()) { return; }
+			if (processes[i] && !processes[i]->Invoke()) { return; }
 
 			if (i == processes.size() - 1) {
 				OnProcessComplete.Invoke(this);

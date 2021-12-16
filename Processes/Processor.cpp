@@ -11,7 +11,7 @@ void Processor::EndProcess(std::string processToEnd) {
 	for (int i = processes.size() - 1; i >= 0; i--)
 	{
 		if (processToEnd == processes.at(i)->Name()) {
-			delete processes.at(i);
+			delete processes[i];
 			processes.erase(processes.begin() + i);
 		}
 	}
@@ -20,7 +20,7 @@ void Processor::EndProcess(std::string processToEnd) {
 void Processor::EndAllProcesses() {
 	for (int i = processes.size() - 1; i >= 0; i--)
 	{
-		delete processes.at(i);
+		delete processes[i];
 		processes.erase(processes.begin() + i);
 	}
 }

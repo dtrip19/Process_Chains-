@@ -22,7 +22,7 @@ public:
 		std::cout << "OnProcessComplete call received\n";
 		for (size_t i = 0; i < processes.size(); i++)
 		{
-			if (processes.at(i) == process) {
+			if (processes[i] == process) {
 				processes.erase(processes.begin() + i);
 			}
 		}
