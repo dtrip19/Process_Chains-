@@ -36,7 +36,6 @@ int main()
     EventListener<>* listener = test.OnEndProcess.AddListener(new EventListener<>([listener, loop]() { *loop = false; std::cout << "Setting loop to false\n"; }));
 
 	while (*loop == true) {
-        if (*loop == false) { std::cout << "This should not be possible\n"; }
 		OnUpdate.Invoke();
 	}
 
